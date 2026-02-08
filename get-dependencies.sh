@@ -43,5 +43,5 @@ cmake .. \
     -DDETHRACE_PLATFORM_SDL3=ON
 make -j$(nproc)
 mv -v dethrace ../../AppDir/bin
-cp -rv ../dethrace/packaging/dethrace.desktop /usr/share/applications/dethrace.desktop
-cp -rv ../dethrace/packaging/icon_source.png /usr/share/pixmaps/icon_source.png
+cp -rv ../packaging/dethrace.desktop /usr/share/applications/dethrace.desktop
+cp -rv ../packaging/icon_source.png /usr/share/pixmaps/icon_source.png
