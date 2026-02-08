@@ -12,7 +12,7 @@ export DESKTOP=/usr/share/applications/dethrace.desktop
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun /PATH/TO/BINARY_AND_LIBRARIES_HERE
+quick-sharun ./AppDir/bin/dethrace
 
 # Additional changes can be done in between here
 
