@@ -7,7 +7,8 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    libdecor
+    libdecor \
+    sdl3
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -25,7 +26,7 @@ get-debloated-pkgs --add-common --prefer-nano
 # else
 # 	regular build steps
 # fi
-cho "Making nightly build of dethrace..."
+echo "Making nightly build of dethrace..."
 echo "---------------------------------------------------------------"
 REPO="https://github.com/dethrace-labs/dethrace"
 VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
