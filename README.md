@@ -17,7 +17,7 @@
 
 </div>
 
-### ⚠️ Follow [instructions](https://github.com/dethrace-labs/dethrace/blob/main/docs/CONFIGURATION.md) here, basically create `dethrace.ini` and edit `[Games]` based to game assets dir like ~/.local/share/dethrace/DATA ⚠️
+### ⚠️ Follow [instructions](https://github.com/dethrace-labs/dethrace/blob/main/docs/CONFIGURATION.md), basically create `dethrace.ini` and edit `[Games]` pointing to game assets dir ⚠️
 
 ---
 
