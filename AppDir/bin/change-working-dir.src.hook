@@ -1,7 +1,8 @@
 dir=${XDG_DATA_HOME:-~/.local/share}/dethrace
 mkdir -p "$dir"
 if [ ! -f "dir"/dethrace.ini ]; then
-cat <<EOM > "dir"/dethrace.ini
+cd "$dir"
+cat <<EOM > "dethrace.ini"
 [General]
 ; Enable original CD check
 CdCheck = 0
