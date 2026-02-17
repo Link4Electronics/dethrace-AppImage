@@ -1,6 +1,6 @@
 dir=${XDG_DATA_HOME:-~/.local/share}/dethrace
 mkdir -p "$dir"
-cd "$dir"
+if [ ! -f "dir"/dethrace.ini ]; then
 cat <<EOM > "dethrace.ini"
 [General]
 ; Enable original CD check
@@ -51,3 +51,5 @@ VolumeMultiplier = 1
 [Network]
 AdapterName = ""
 EOM
+fi
+cd "$dir"
