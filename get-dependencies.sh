@@ -19,19 +19,20 @@ get-debloated-pkgs --add-common --prefer-nano
 #make-aur-package PACKAGENAME
 
 # If the application needs to be manually built that has to be done down here
-
-# if you also have to make nightly releases check for DEVEL_RELEASE = 1
-#
-# if [ "${DEVEL_RELEASE-}" = 1 ]; then
-# 	nightly build steps
-# else
-# 	regular build steps
-# fi
-echo "Making nightly build of dethrace..."
+echo "Building dethrace..."
 echo "---------------------------------------------------------------"
 REPO="https://github.com/dethrace-labs/dethrace"
-VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
-git clone --recursive --depth 1 "$REPO" ./dethrace
+if [ "${DEVEL_RELEASE-}" = 1 ]; then
+    echo "Making nightly build of dethrace..."
+    echo "---------------------------------------------------------------"
+    VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
+    git clone --recursive --depth 1 "$REPO" ./dethrace
+else
+    echo "Making stable build of dethrace..."
+    echo "---------------------------------------------------------------"
+    VERSION=$(git ls-remote --tags --refs --sort='v:refname' "$REPO" | tail -n1 | cut -d/ -f3)
+    git clone --branch "$VERSION" --single-branch --recursive --depth 1 "$REPO" ./dethrace
+fi
 echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
