@@ -1,5 +1,5 @@
 #!/bin/sh
-dir=${XDG_DATA_HOME:-~/.local/share}/dethrace
+dir=$DATADIR/dethrace
 mkdir -p "$dir"
 if [ ! -f "$dir"/dethrace.ini ]; then
 cd "$dir"
